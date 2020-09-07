@@ -164,3 +164,71 @@ if(!greetings.include("Hello")) {
 
 ```
 
+
+
+
+
+
+
+## \- 리액트 프로젝트 진행 과정
+
+
+
+
+
+##### 1. npx 설치
+
+- yarn global add npx
+
+  또는
+
+- npm i npx -g
+
+  => npx로 모듈 설치 시, 해당 모듈을 프로젝트 종료와 함께 삭제.
+
+  ​     프로젝트가 시작되면 해당 모듈을 최신 버전으로 재설치.
+
+  ​     <u>결과적으로 모든 모듈을 최선 버전으로 유지가 가능해짐</u>
+
+
+
+##### 2. create-react-app 모듈 설치
+
+- npx create-react-app 프로젝트명
+
+  => create-react-app 모듈을 자동으로 설치하여 실행해줌.
+
+
+
+##### 3 react-router-dom 설치
+
+- yarn add react-router-dom
+
+
+
+##### \*\* 리액트에서는 css파일명.module.css 로 파일 생성 시 이를 로컬 css 로 받아들임 
+
+#####     => className에 일정 문자를 덧붙여줌
+
+
+
+##### 4. 꾸미기 위해 styled-components 모듈 설치
+
+- yarn add styled-components
+
+
+
+##### 5. Global 스타일을 위해  styled-reset 모듈 설치
+
+- yarn add styled-reset
+
+  => css를 초기화하는 것이 목적
+
+
+
+##### 6.  Movie DB API 사용 위해 axios 모듈 설치
+
+- yarn add axios
+
+
+
