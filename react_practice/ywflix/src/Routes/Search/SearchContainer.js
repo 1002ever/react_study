@@ -14,12 +14,22 @@ export default class extends React.Component {
     loading: false
   };
   
-  handleSubmit = async() => {
+  handleSubmit = event => {
+    event.preventDefault();
     const { searchTerm } = this.state;
     if(searchTerm !== ""){
       this.searchByTerm(searchTerm);
     }
-  }
+  };
+
+  updateTerm = event => {
+    const { 
+      target: {value} 
+    } = event;
+    this.setState({
+      searchTerm: value
+    });
+  };
 
   searchByTerm = async() => {
     const { searchTerm } = this.state;
@@ -30,16 +40,16 @@ export default class extends React.Component {
       const {
         data: { results: tvResults } 
         } = await tvApi.search(searchTerm);
-      
-      console.log(movieResults, tvResults);
-
-      this.setState({ loading: true });
+      this.setState({ 
+        movieResults,
+        tvResults  
+      });
     } catch {
       this.setState({ error: "검색 결과를 찾을 수 없습니다." })
     } finally {
       this.setState({ loading: false })
     }
-  }
+  };
 
   render() {
     const { movieResults, tvResults, searchTerm, error, loading } = this.state;
@@ -50,6 +60,7 @@ export default class extends React.Component {
       error={error}
       loading={loading}
       handleSubmit={this.handleSubmit}
+      updateTerm={this.updateTerm}
     />;
   }
 }

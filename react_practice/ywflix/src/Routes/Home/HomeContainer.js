@@ -8,7 +8,7 @@ export default class extends React.Component{
     nowPlaying: null,
     upcoming: null,
     popular: null,
-    error: null,
+    error: 12,
     loading: true
   };
 
